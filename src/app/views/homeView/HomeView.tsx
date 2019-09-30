@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: 240,
             height: 60,
             margin: `${theme.spacing(1.2)}px 0`,
-            background: 'rgba(255,255,255,.2)',
+            background: 'rgba(255,230,230,.15)',
             color: 'rgba(255,255,255,.8)',
         },
         footer: {
