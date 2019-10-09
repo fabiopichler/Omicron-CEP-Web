@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
-import { Theme, Container, Typography, Paper } from '@material-ui/core';
+import { Theme, Container } from '@material-ui/core';
 
 import CepForm from './cepForm/CepForm';
 import CepContent from '../../components/cepContent/CepContent';
 import Title from '../../components/title/Title';
 import Alert from '../../components/alert/Alert';
 import Loading from '../../components/loading/Loading';
+import Info from '../../components/info/Info';
 
 import { setPageTitle } from '../../../helpers/system';
 import { CepViewContainer } from './CepViewContainer';
@@ -19,20 +20,6 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             height: '100%',
         },
-        info: {
-            display: 'flex',
-            alignItems: 'center',
-            textAlign: 'center',
-            height: '100%',
-            width: '90%',
-            maxWidth: '480px',
-            margin: '0 auto',
-        },
-        textInfo: {
-            marginBottom: theme.spacing(2),
-            fontWeight: 'bold',
-            color: '#777',
-        }
     })
 );
 
@@ -67,11 +54,9 @@ const CepView: React.FC<ICepViewProps> = props => {
                     <CepContent cep={historyList[0]} />
                     
                 ) : historyList.length === 0 ? (
-                    <div className={classes.info}>
-                        <Typography variant="body1" className={classes.textInfo}>
-                            Você ainda não realizou pesquisas de endereço por CEP. Para começar, insira o número do CEP na caixa de pesquisa.
-                        </Typography>
-                    </div>
+                    <Info>
+                        Você ainda não realizou pesquisas de endereço por CEP. Para começar, insira o número do CEP na caixa de pesquisa.
+                    </Info>
 
                 ) : null}
                 

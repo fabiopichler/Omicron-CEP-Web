@@ -4,8 +4,6 @@ import {
     makeStyles,
     Theme,
     createStyles,
-    Paper,
-    Typography
 } from '@material-ui/core';
 
 import CepContent from '../../../components/cepContent/CepContent';
@@ -13,6 +11,7 @@ import Title from '../../../components/title/Title';
 import Loading from '../../../components/loading/Loading';
 import Alert from '../../../components/alert/Alert';
 import AddressContent from '../../../components/addressContent/AddressContent';
+import Info from '../../../components/info/Info';
 
 import { AddressSearchPageContainer } from './AddressSearchPageContainer';
 import { IAddressSearchPageProps } from './IAddressSearchPageProps';
@@ -25,20 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
             height: '100%',
             boxSizing: 'border-box',
         },
-        info: {
-            display: 'flex',
-            alignItems: 'center',
-            textAlign: 'center',
-            height: '100%',
-            width: '90%',
-            maxWidth: '480px',
-            margin: '0 auto',
-        },
-        textInfo: {
-            marginBottom: theme.spacing(2),
-            fontWeight: 'bold',
-            color: '#777',
-        }
     })
 );
 
@@ -62,11 +47,9 @@ const AddressSearchPage: React.FC<IAddressSearchPageProps> = props => {
                 </Alert>
 
             ) : searchResultList.length === 0 ? (
-                <div className={classes.info}>
-                    <Typography variant="body1" className={classes.textInfo}>
-                        Para pesquisar endereços, clique no botão de pesquisa, logo a baixo, e insira o endereço desejado.
-                    </Typography>
-                </div>
+                <Info>
+                    Para pesquisar endereços, clique no botão de pesquisa, logo a baixo, e insira o endereço desejado.
+                </Info>
 
             ) : (
                 <>
