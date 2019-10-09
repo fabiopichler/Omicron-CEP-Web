@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             padding: theme.spacing(2),
+            height: '100%',
+            boxSizing: 'border-box',
         },
         card: {
             borderRadius: 0,
@@ -55,7 +57,7 @@ const AboutPage: React.FC = props => {
                 </CardContent>
             </Card>
 
-            <Card className={classes.card}>
+            <Card className={clsx(classes.card, classes.marginBottom2)}>
                 <CardContent>
                     <Typography
                         variant="body1"

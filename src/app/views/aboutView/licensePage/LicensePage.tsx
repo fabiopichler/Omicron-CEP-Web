@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import {
     Card,
@@ -13,6 +14,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             padding: theme.spacing(2),
+            height: '100%',
+            boxSizing: 'border-box',
         },
         card: {
             borderRadius: 0,
@@ -31,7 +34,7 @@ const LicensePage: React.FC = props => {
 
     return (
         <div className={classes.root}>
-            <Card className={classes.card}>
+            <Card className={clsx(classes.card, classes.marginBottom2)}>
                 <CardContent>
                     <Typography variant="body1" paragraph>
                         MIT License (MIT)

@@ -8,23 +8,30 @@ import { ITabsHeaderProps } from './ITabsHeaderProps';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        root: {
+            height:'100%',
+            display:'flex',
+            flexDirection:'column',
+        },
         header: {
             background: theme.palette.primary.main,
             boxShadow: theme.shadows[3],
             color: 'white',
+            zIndex: 2,
         },
         tabsContainer: {
             background: 'rgba(255,255,255,.13)',
             borderBottom: '1px solid rgba(255, 255, 255, .7)',
         },
         tabs: {
-            marginBottom: -1
+            marginBottom: -1,
         },
         tabsIndicator: {
             backgroundColor: 'white',
         },
         content: {
-            flexGrow: 1,
+            height:'100%',
+            overflow: 'auto',
             padding: 0,
         },
         swipeableViews: {
@@ -48,7 +55,7 @@ const TabsHeader: React.FC<ITabsHeaderProps> = props => {
     }
 
     return (
-        <>
+        <div className={classes.root}>
             <div className={classes.header}>
                 <Container>
                     <div className={classes.tabsContainer}>
@@ -78,7 +85,7 @@ const TabsHeader: React.FC<ITabsHeaderProps> = props => {
                     {children}
                 </SwipeableViews>
             </Container>
-        </>
+        </div>
     );
 };
 

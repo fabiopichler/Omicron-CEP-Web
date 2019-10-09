@@ -22,12 +22,23 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             padding: theme.spacing(2),
+            height: '100%',
+            boxSizing: 'border-box',
         },
-        paper: {
+        info: {
+            display: 'flex',
+            alignItems: 'center',
+            textAlign: 'center',
+            height: '100%',
+            width: '90%',
+            maxWidth: '480px',
+            margin: '0 auto',
+        },
+        textInfo: {
             marginBottom: theme.spacing(2),
-            padding: theme.spacing(2),
-            borderRadius: 0,
-        },
+            fontWeight: 'bold',
+            color: '#777',
+        }
     })
 );
 
@@ -51,11 +62,11 @@ const AddressSearchPage: React.FC<IAddressSearchPageProps> = props => {
                 </Alert>
 
             ) : searchResultList.length === 0 ? (
-                <Paper className={classes.paper}>
-                    <Typography variant="body1">
+                <div className={classes.info}>
+                    <Typography variant="body1" className={classes.textInfo}>
                         Para pesquisar endereços, clique no botão de pesquisa, logo a baixo, e insira o endereço desejado.
                     </Typography>
-                </Paper>
+                </div>
 
             ) : (
                 <>

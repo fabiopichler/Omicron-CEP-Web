@@ -27,3 +27,8 @@ body {
     opacity: 0.01;
     transition: opacity 400ms ease-in;
 }
+
+.react-swipeable-view-container,
+.react-swipeable-view-container > div {
+    height: 100%;
+}
