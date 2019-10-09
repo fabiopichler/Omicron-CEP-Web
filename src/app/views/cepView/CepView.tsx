@@ -16,11 +16,23 @@ import { Status } from '../../../models/Status';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        paper: {
-            marginBottom: theme.spacing(2),
-            padding: theme.spacing(2),
-            borderRadius: 0,
+        container: {
+            height: '100%',
         },
+        info: {
+            display: 'flex',
+            alignItems: 'center',
+            textAlign: 'center',
+            height: '100%',
+            width: '90%',
+            maxWidth: '480px',
+            margin: '0 auto',
+        },
+        textInfo: {
+            marginBottom: theme.spacing(2),
+            fontWeight: 'bold',
+            color: '#777',
+        }
     })
 );
 
@@ -37,7 +49,7 @@ const CepView: React.FC<ICepViewProps> = props => {
         <>
             <CepForm setCurrentSearch={setCurrentSearch} />
 
-            <Container>
+            <Container className={classes.container}>
                 {status === Status.Loading ? (
                     <Loading />
 
@@ -55,15 +67,11 @@ const CepView: React.FC<ICepViewProps> = props => {
                     <CepContent cep={historyList[0]} />
                     
                 ) : historyList.length === 0 ? (
-                    <Paper className={classes.paper}>
-                        <Typography variant="body1" gutterBottom>
-                            Você ainda não realizou pesquisas de endereço por CEP.
+                    <div className={classes.info}>
+                        <Typography variant="body1" className={classes.textInfo}>
+                            Você ainda não realizou pesquisas de endereço por CEP. Para começar, insira o número do CEP na caixa de pesquisa.
                         </Typography>
-
-                        <Typography variant="body1">
-                            Para começar, insira o número do CEP na caixa de pesquisa.
-                        </Typography>
-                    </Paper>
+                    </div>
 
                 ) : null}
                 
