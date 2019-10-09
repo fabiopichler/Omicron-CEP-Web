@@ -14,7 +14,7 @@ import {
 
 import MenuIcon from '@material-ui/icons/Menu';
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.svg';
 
 import AppDrawer from './appDrawer/AppDrawer';
 import HideOnScroll from '../components/hideOnScroll/HideOnScroll';

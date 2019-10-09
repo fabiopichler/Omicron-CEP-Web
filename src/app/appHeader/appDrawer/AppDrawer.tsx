@@ -14,7 +14,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import InfoIcon from '@material-ui/icons/Info';
 import LocationSearchingIcon from '@material-ui/icons/LocationSearching';
 
-import logo from '../../../assets/images/logo.png';
+import logo from '../../../assets/images/logo.svg';
 
 import ListItemDrawer from './listItemDrawer/ListItemDrawer';
 import TwitterIcon from '../../components/icons/twitterIcon/TwitterIcon';

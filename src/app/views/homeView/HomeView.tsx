@@ -6,6 +6,7 @@ import { Theme, Button, Typography } from '@material-ui/core';
 
 import { setPageTitle } from '../../../helpers/system';
 import { Config } from '../../../config';
+import { teal } from '@material-ui/core/colors';
 
 const baseUrl = Config.baseUrl;
 
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: `${theme.spacing(1.2)}px 0`,
             background: 'rgba(255,230,230,.15)',
             color: 'rgba(255,255,255,.8)',
+            boxShadow: `1px 1px 3px ${teal[900]}`,
         },
         footer: {
             padding: theme.spacing(2),
