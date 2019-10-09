@@ -7,9 +7,11 @@ import { Theme } from '@material-ui/core';
 
 import AppHeader from './appHeader/AppHeader';
 import AppRouter from './appRouter/AppRouter';
+import AppWebFooter from './appWebFooter/AppWebFooter';
 
 import { AppContainer } from './AppContainer';
 import { IAppProps } from './IAppProps';
+import { MobileApp } from '../services/MobileApp';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -60,6 +62,10 @@ const App: React.FC<IAppProps> = props => {
                     </div>
                 </CSSTransition>
             </TransitionGroup>
+
+            {!MobileApp.onMobile() ? (
+                <AppWebFooter />
+            ) : null}
         </div>
     );
 };

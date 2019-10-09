@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
 import {
@@ -19,6 +20,7 @@ import AddressSearchTransition from './addressSearchTransition/AddressSearchTran
 
 import { IAddressSearchFormProps } from './IAddressSearchFormProps';
 import { UfList } from '../../../../data/UfList';
+import { MobileApp } from '../../../../services/MobileApp';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -36,6 +38,9 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'absolute',
             bottom: theme.spacing(2.5),
             right: theme.spacing(2.5),
+        },
+        fabWeb: {
+            bottom: theme.spacing(10),
         },
         dialogContainer: {
             alignItems: 'start',
@@ -108,7 +113,7 @@ const AddressSearchForm: React.FC<IAddressSearchFormProps> = props => {
                     <Fab
                         onClick={handleClickOpen}
                         aria-label="Search"
-                        className={classes.fab}
+                        className={clsx(classes.fab, { [classes.fabWeb]: !MobileApp.onMobile() })}
                         color="primary"
                     >
                         <SearchIcon />

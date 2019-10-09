@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
-import { Theme, Container } from '@material-ui/core';
+import { Theme, Container, Toolbar } from '@material-ui/core';
 
 import CepForm from './cepForm/CepForm';
 import CepContent from '../../components/cepContent/CepContent';
@@ -14,11 +14,12 @@ import { setPageTitle } from '../../../helpers/system';
 import { CepViewContainer } from './CepViewContainer';
 import { ICepViewProps } from './ICepViewProps';
 import { Status } from '../../../models/Status';
+import { MobileApp } from '../../../services/MobileApp';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            height: '100%',
+            flexGrow: 1,
         },
     })
 );
@@ -72,6 +73,10 @@ const CepView: React.FC<ICepViewProps> = props => {
                                 <CepContent cep={cep} key={index} />
                             ) : null
                         ))}
+
+                        {!MobileApp.onMobile() ? (
+                            <Toolbar />
+                        ) : null}
                     </>
                 ) : null}
             </Container>
