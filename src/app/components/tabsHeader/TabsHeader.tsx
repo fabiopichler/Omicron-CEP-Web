@@ -81,6 +81,11 @@ const TabsHeader: React.FC<ITabsHeaderProps> = props => {
                     index={index}
                     onChangeIndex={handleChangeIndex}
                     className={classes.swipeableViews}
+                    springConfig={{
+                        duration: '700ms',
+                        easeFunction: 'cubic-bezier(0.15, 0.3, 0.25, 1)',
+                        delay: '0s'
+                    }}
                 >
                     {children}
                 </SwipeableViews>
