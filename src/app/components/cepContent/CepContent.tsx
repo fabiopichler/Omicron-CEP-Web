@@ -3,13 +3,16 @@ import Moment from 'react-moment';
 import clsx from 'clsx';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
-import { Theme, Card, CardContent, Typography } from '@material-ui/core';
+import { Theme, Card, CardContent, Typography, IconButton } from '@material-ui/core';
+
+import CloseIcon from '@material-ui/icons/Close';
 
 import { ICepContentProps } from './ICepContentProps';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
+            position: 'relative',
             marginBottom: theme.spacing(2),
             borderRadius: 0,
         },
@@ -22,17 +25,33 @@ const useStyles = makeStyles((theme: Theme) =>
         textPrimary: {
             color: theme.palette.primary.main,
         },
+        closeButton: {
+            position: 'absolute',
+            right: theme.spacing(1),
+            top: theme.spacing(1),
+            color: theme.palette.grey[500],
+        },
     })
 );
 
 const CepContent: React.FC<ICepContentProps> = props => {
-    const { cep, hideDate } = props;
+    const { cep, hideDate, onCepDelete } = props;
 
     const classes = useStyles(props);
 
     return (
         <Card className={classes.root}>
             <CardContent>
+                {onCepDelete ? (
+                    <IconButton
+                        aria-label="close"
+                        className={classes.closeButton}
+                        onClick={() => onCepDelete(cep.cep)}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                ) : null}
+
                 <Typography
                     component="h5"
                     variant="h5"

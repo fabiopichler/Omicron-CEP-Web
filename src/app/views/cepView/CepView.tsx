@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const CepView: React.FC<ICepViewProps> = props => {
-    const { cepState: { historyList, status } } = props;
+    const { cepState: { historyList, status }, cepDelete } = props;
 
     const classes = useStyles(props);
 
@@ -52,7 +52,7 @@ const CepView: React.FC<ICepViewProps> = props => {
                     </Alert>
 
                 ) : status === Status.Ok && historyList.length > 0 ? (
-                    <CepContent cep={historyList[0]} />
+                    <CepContent cep={historyList[0]} onCepDelete={cepDelete} />
                     
                 ) : historyList.length === 0 ? (
                     <Info>
@@ -70,7 +70,11 @@ const CepView: React.FC<ICepViewProps> = props => {
 
                         {historyList.map((cep, index) => (
                             index > 0 || status !== Status.Ok ? (
-                                <CepContent cep={cep} key={index} />
+                                <CepContent
+                                    cep={cep}
+                                    key={index}
+                                    onCepDelete={cepDelete}
+                                />
                             ) : null
                         ))}
 

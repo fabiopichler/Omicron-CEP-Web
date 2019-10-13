@@ -8,6 +8,7 @@ import { Status } from '../../models/Status';
 export const CEP_INIT = 'CEP_INIT';
 export const CEP_DONE = 'CEP_DONE';
 export const CEP_START = 'CEP_START';
+export const CEP_DELETE = 'CEP_DELETE';
 export const CEP_ERROR = 'CEP_ERROR';
 
 export const cepInit = () => (dispatch: (param: ICepAction) => void) => {
@@ -44,3 +45,8 @@ export const checkCep = (cep: string) => (
         }
     }
 );
+
+export const cepDelete = (cep: string): ICepAction => ({
+    type: CEP_DELETE,
+    payload: cep
+});
