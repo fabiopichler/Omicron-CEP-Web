@@ -53,7 +53,7 @@ export const CepReducer = (state: ICepState = initialState, actions: ICepAction)
                 const index = historyList.map(x => x.cep).indexOf(payload);
                 let status = state.status;
 
-                if (index == 0)
+                if (index == 0 && status == Status.Ok)
                     status = Status.Nothing;
 
                 if (index !== -1)
