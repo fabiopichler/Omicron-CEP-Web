@@ -25,10 +25,11 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: 0,
             boxShadow: '0 0 6px rgba(0,0,0,.4)',
             background: 'white',
-            transition: 'background 800ms ease',
+            transition: 'background 800ms ease, box-shadow 800ms ease',
         },
         appBarHome: {
-            background: teal[500],
+            boxShadow: 'none',
+            background: teal[700],
         },
         link: {
             display: 'flex',
