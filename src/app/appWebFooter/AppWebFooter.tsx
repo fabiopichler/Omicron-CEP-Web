@@ -1,5 +1,9 @@
 import React from 'react';
+import clsx from 'clsx';
+import AndroidIcon from '@material-ui/icons/Android';
 
+import { withRouter, RouterProps } from 'react-router';
+import { teal } from '@material-ui/core/colors';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import {
     Theme,
@@ -10,7 +14,9 @@ import {
     Link
 } from '@material-ui/core';
 
-import AndroidIcon from '@material-ui/icons/Android';
+import { Config } from '../../config';
+
+const { baseUrl } = Config;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,11 +25,19 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: 0,
             boxShadow: '0 0 6px rgba(0,0,0,.4)',
             background: 'white',
+            transition: 'background 800ms ease',
+        },
+        appBarHome: {
+            background: teal[500],
         },
         link: {
             display: 'flex',
             alignItems: 'center',
             margin: '0 auto',
+            transition: 'color 800ms ease',
+        },
+        linkHome: {
+            color: 'white',
         },
         icon: {
             marginRight: theme.spacing(1),
@@ -34,8 +48,19 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const AppWebFooter: React.FC = props => {
+const AppWebFooter: React.FC<RouterProps> = props => {
+    const { history } = props;
     const classes = useStyles(props);
+
+    const [isHome, setIsHome] = React.useState(false);
+
+    React.useEffect(() => {
+        if (history.location.pathname === `${baseUrl}/`)
+            setIsHome(true);
+        else
+            setIsHome(false);
+            
+    }, [history.location]);
 
     return (
         <>
@@ -43,14 +68,14 @@ const AppWebFooter: React.FC = props => {
 
             <AppBar
                 component="footer"
-                className={classes.appBar}
+                className={clsx(classes.appBar, { [classes.appBarHome]: isHome })}
             >
                 <Container>
                     <Toolbar>
                         <Link
                             href="https://fabiopichler.net/omicron-cep"
                             target="_blank"
-                            className={classes.link}
+                            className={clsx(classes.link, { [classes.linkHome]: isHome })}
                         >
                             <AndroidIcon className={classes.icon} />
 
@@ -65,4 +90,4 @@ const AppWebFooter: React.FC = props => {
     );
 };
 
-export default AppWebFooter;
+export default withRouter(AppWebFooter);
