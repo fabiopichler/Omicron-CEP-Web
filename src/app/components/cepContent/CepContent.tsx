@@ -7,6 +7,8 @@ import { Theme, Card, CardContent, Typography, IconButton } from '@material-ui/c
 
 import CloseIcon from '@material-ui/icons/Close';
 
+import QuestionDialog from '../questionDialog/QuestionDialog';
+
 import { ICepContentProps } from './ICepContentProps';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -41,17 +43,24 @@ const CepContent: React.FC<ICepContentProps> = props => {
 
     return (
         <Card className={classes.root}>
-            <CardContent>
-                {onCepDelete ? (
-                    <IconButton
-                        aria-label="close"
-                        className={classes.closeButton}
-                        onClick={() => onCepDelete(cep.cep)}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                ) : null}
+            {onCepDelete ? (
+                <QuestionDialog
+                    title="Remover CEP"
+                    description={`Deseja remover o CEP ${cep.cep} do histórico de pesquisas?`}
+                    onConfirm={() => onCepDelete(cep.cep)}
+                    openButton={(props: any) => (
+                        <IconButton
+                            aria-label="close"
+                            className={classes.closeButton}
+                            {...props}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    )}
+                />
+            ) : null}
 
+            <CardContent>
                 <Typography
                     component="h5"
                     variant="h5"
