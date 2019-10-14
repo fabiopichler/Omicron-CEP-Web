@@ -3,13 +3,18 @@ import Moment from 'react-moment';
 import clsx from 'clsx';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
-import { Theme, Card, CardContent, Typography } from '@material-ui/core';
+import { Theme, Card, CardContent, Typography, IconButton } from '@material-ui/core';
+
+import CloseIcon from '@material-ui/icons/Close';
+
+import QuestionDialog from '../questionDialog/QuestionDialog';
 
 import { IAddressContentProps } from './IAddressContentProps';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
+            position: 'relative',
             marginBottom: theme.spacing(2),
             borderRadius: 0,
         },
@@ -22,16 +27,43 @@ const useStyles = makeStyles((theme: Theme) =>
         textPrimary: {
             color: theme.palette.primary.main,
         },
+        closeButton: {
+            position: 'absolute',
+            right: theme.spacing(1),
+            top: theme.spacing(1),
+            color: theme.palette.grey[500],
+        },
     })
 );
 
 const AddressContent: React.FC<IAddressContentProps> = props => {
-    const { address } = props;
+    const { address, addressDelete } = props;
 
     const classes = useStyles(props);
 
     return (
         <Card className={classes.root}>
+            {addressDelete ? (
+                <QuestionDialog
+                    title="Remover endereço"
+                    description={
+                        <span>
+                            Deseja remover o endereço <strong>{address.logradouro}, {address.cidade}/{address.uf}</strong> do histórico de pesquisas?
+                        </span>
+                    }
+                    onConfirm={() => addressDelete(address)}
+                    openButton={(props: any) => (
+                        <IconButton
+                            aria-label="close"
+                            className={classes.closeButton}
+                            {...props}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    )}
+                />
+            ) : null}
+
             <CardContent>
                 <Typography
                     variant="body2"

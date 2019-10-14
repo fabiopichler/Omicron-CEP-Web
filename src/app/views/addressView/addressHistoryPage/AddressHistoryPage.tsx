@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const AddressHistoryPage: React.FC<IAddressHistoryPageProps> = props => {
-    const { addressState: { historyList } } = props;
+    const { addressState: { historyList }, addressDelete } = props;
     const classes = useStyles(props);
     
     return (
@@ -42,7 +42,11 @@ const AddressHistoryPage: React.FC<IAddressHistoryPageProps> = props => {
                     />
 
                     {historyList.map((address, index) => (
-                        <AddressContent address={address} key={index} />
+                        <AddressContent
+                            address={address}
+                            key={index}
+                            addressDelete={addressDelete}
+                        />
                     ))}
                 </>
             )}

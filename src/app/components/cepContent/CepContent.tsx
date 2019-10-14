@@ -46,7 +46,11 @@ const CepContent: React.FC<ICepContentProps> = props => {
             {onCepDelete ? (
                 <QuestionDialog
                     title="Remover CEP"
-                    description={`Deseja remover o CEP ${cep.cep} do histórico de pesquisas?`}
+                    description={
+                        <span>
+                            Deseja remover o CEP <strong>{cep.cep}</strong> do histórico de pesquisas?
+                        </span>
+                    }
                     onConfirm={() => onCepDelete(cep.cep)}
                     openButton={(props: any) => (
                         <IconButton

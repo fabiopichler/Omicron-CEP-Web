@@ -9,6 +9,7 @@ import { IAddress } from '../../models/IAddress';
 export const ADDRESS_INIT = 'ADDRESS_INIT';
 export const ADDRESS_DONE = 'ADDRESS_DONE';
 export const ADDRESS_START = 'ADDRESS_START';
+export const ADDRESS_DELETE = 'ADDRESS_DELETE';
 export const ADDRESS_ERROR = 'ADDRESS_ERROR';
 
 export const addressInitHistory = () => (dispatch: (param: IAddressAction) => void) => {
@@ -50,3 +51,8 @@ export const checkByAddress = (address: IAddress) => (
         }
     }
 );
+
+export const addressDelete = (address: IAddress): IAddressAction => ({
+    type: ADDRESS_DELETE,
+    payload: address
+});
