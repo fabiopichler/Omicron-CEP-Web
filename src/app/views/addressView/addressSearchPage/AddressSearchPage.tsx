@@ -28,7 +28,10 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const AddressSearchPage: React.FC<IAddressSearchPageProps> = props => {
-    const { addressState: { status, historyList, searchResultList } } = props;
+    const {
+        addressState: { status, historyList, searchResultList },
+        addressDelete
+    } = props;
     const classes = useStyles(props);
     
     return (
@@ -53,7 +56,10 @@ const AddressSearchPage: React.FC<IAddressSearchPageProps> = props => {
 
             ) : (
                 <>
-                    <AddressContent address={historyList[0]} />
+                    <AddressContent
+                        address={historyList[0]}
+                        addressDelete={addressDelete}
+                    />
 
                     <Title
                         title="Resultado da pesquisa"
