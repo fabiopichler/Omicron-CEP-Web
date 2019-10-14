@@ -11,7 +11,8 @@ import {
     TextField,
     DialogContent,
     Button,
-    DialogActions
+    DialogActions,
+    Zoom
 } from '@material-ui/core';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const AddressSearchForm: React.FC<IAddressSearchFormProps> = props => {
-    const { onCheckByAddress } = props;
+    const { index, onCheckByAddress } = props;
     const classes = useStyles(props);
 
     const [open, setOpen] = React.useState(false);
@@ -110,14 +111,21 @@ const AddressSearchForm: React.FC<IAddressSearchFormProps> = props => {
         <>
             <div className={classes.root}>
                 <Container className={classes.container}>
-                    <Fab
-                        onClick={handleClickOpen}
-                        aria-label="Search"
-                        className={clsx(classes.fab, { [classes.fabWeb]: !MobileApp.onMobile() })}
-                        color="primary"
+                    <Zoom
+                        in={index === 0}
+                        style={{
+                            transitionDelay: `${index === 0 ? 500 : 0}ms`,
+                        }}
                     >
-                        <SearchIcon />
-                    </Fab>
+                        <Fab
+                            onClick={handleClickOpen}
+                            aria-label="Search"
+                            className={clsx(classes.fab, { [classes.fabWeb]: !MobileApp.onMobile() })}
+                            color="primary"
+                        >
+                            <SearchIcon />
+                        </Fab>
+                    </Zoom>
                 </Container>
             </div>
 

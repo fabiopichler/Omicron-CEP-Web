@@ -8,7 +8,7 @@ import TabsHeader from '../../components/tabsHeader/TabsHeader';
 import { setPageTitle } from '../../../helpers/system';
 import { AddressViewContainer } from './AddressViewContainer';
 import { IAddressViewProps } from './IAddressViewProps';
-import { IAddress } from '../../../models/IAddress';
+//import { IAddress } from '../../../models/IAddress';
 
 const AddressView: React.FC<IAddressViewProps> = props => {
     const { onCheckByAddress } = props;
@@ -17,10 +17,10 @@ const AddressView: React.FC<IAddressViewProps> = props => {
 
     React.useEffect(() => setPageTitle('Pesquisar por endereço'), []);
 
-    const handleCheckByAddress = (address: IAddress) => {
+    /*const handleCheckByAddress = (address: IAddress) => {
         setIndex(0);
         onCheckByAddress(address);
-    }
+    }*/
 
     return (
         <>
@@ -34,7 +34,10 @@ const AddressView: React.FC<IAddressViewProps> = props => {
                 <AddressHistoryPage />
             </TabsHeader>
 
-            <AddressSearchForm onCheckByAddress={handleCheckByAddress} />
+            <AddressSearchForm
+                index={index}
+                onCheckByAddress={onCheckByAddress/*handleCheckByAddress*/}
+            />
         </>
     );
 };
