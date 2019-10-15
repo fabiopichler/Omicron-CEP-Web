@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: `${theme.spacing(1.2)}px 0`,
             background: teal[500],
             color: 'rgba(255,255,255,.8)',
-            boxShadow: `1px 1px 3px rgba(0,0,0,.2)`,
+            boxShadow: `0 1px 3px rgba(0,0,0,.2)`,
+            borderRadius: 0,
         },
         footer: {
             padding: theme.spacing(2),
