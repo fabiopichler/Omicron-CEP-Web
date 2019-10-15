@@ -14,6 +14,8 @@ import Title from '../../../components/title/Title';
 
 import { Config } from '../../../../config';
 
+const { appName, appVersion } = Config;
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -36,8 +38,8 @@ const AboutPage: React.FC = props => {
     return (
         <div className={classes.root}>
             <Title
-                title={`Sobre o ${Config.appName}`}
-                desc="Desenvolvido por Fábio Pichler"
+                title={`${appName} v${appVersion}`}
+                desc="&copy; 2019, Fábio Pichler"
             />
 
             <Card className={clsx(classes.card, classes.marginBottom2)}>
@@ -48,22 +50,19 @@ const AboutPage: React.FC = props => {
                         color="textSecondary"
                         gutterBottom
                     >
-                        {Config.appName}
+                        {appName}
                     </Typography>
 
-                    <Typography variant="body1">
-                        Com o {Config.appName}, você pesquisa por qualquer CEP ou endereço, e tem o resultado imediatamente, dum jeito muito prático e rápido.
+                    <Typography variant="body1" gutterBottom>
+                        Com o {appName}, você pesquisa por qualquer CEP ou endereço, e tem o resultado imediatamente, dum jeito muito prático e rápido.
                     </Typography>
                 </CardContent>
             </Card>
 
             <Card className={clsx(classes.card, classes.marginBottom2)}>
                 <CardContent>
-                    <Typography
-                        variant="body1"
-                        gutterBottom
-                    >
-                        O {Config.appName} é um aplicativo especialmente desenvolvido para a consulta de CEPs de todo o Brasil.
+                    <Typography variant="body1" gutterBottom>
+                        O {appName} é um aplicativo especialmente desenvolvido para a consulta de CEPs de todo o Brasil.
                     </Typography>
 
                     <Typography variant="body1">

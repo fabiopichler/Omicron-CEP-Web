@@ -8,6 +8,13 @@ export class MobileApp {
         return onMobile;
     }
 
+    public static getVersionName(): string {
+        if (onMobile)
+            return mobileApp.getVersionName();
+
+        return '';
+    }
+
     public static closeApp(): void {
         if (onMobile)
             mobileApp.closeApp();

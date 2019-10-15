@@ -1,6 +1,7 @@
 
 export interface IDeviceConfig {
     readonly appName: string;
+    readonly appVersion: string;
     readonly baseUrl: string;
 }
 

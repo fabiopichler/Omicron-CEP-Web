@@ -22,19 +22,22 @@ import TwitterIcon from '../../components/icons/twitterIcon/TwitterIcon';
 import { IAppDrawerProps } from './IAppDrawerProps';
 import { Config } from '../../../config';
 
-const baseUrl = Config.baseUrl;
+const { appVersion, baseUrl } = Config;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        drawerPaper: {
+            width: 280,
+        },
         bold: {
             fontWeight: 'bold',
         },
         drawerHeader: {
-            height: 156,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            padding: `${theme.spacing(2.5)}px 0`,
             background: theme.palette.primary.main,
             color: 'white',
         },
@@ -50,13 +53,19 @@ const useStyles = makeStyles((theme: Theme) =>
             lineHeight: 1.3,
         },
         list: {
-            width: 280,
+            flexGrow: 1,
         },
         dividerText: {
             paddingTop: theme.spacing(2),
             paddingBottom: theme.spacing(1),
             paddingLeft: theme.spacing(2),
         },
+        drawerFooter: {
+            padding: theme.spacing(2),
+            textAlign: 'center',
+            fontSize: '0.9rem',
+            color: '#888',
+        }
     })
 );
 
@@ -120,7 +129,7 @@ const AppDrawer: React.FC<IAppDrawerProps> = props => {
 
                 <ListItemDrawer
                     icon={ThumbUpIcon}
-                    text="Curtir página no Facebook"
+                    text="Página no Facebook"
                     component="a"
                     href="https://www.facebook.com/fabiopichler.net"
                     target="_blank"
@@ -150,6 +159,9 @@ const AppDrawer: React.FC<IAppDrawerProps> = props => {
             open={stateOpen}
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
+            classes={{
+                paper: classes.drawerPaper
+            }}
         >
             <div className={classes.drawerHeader}>
                 <img
@@ -168,6 +180,10 @@ const AppDrawer: React.FC<IAppDrawerProps> = props => {
             </div>
 
             {sideList()}
+
+            <Typography variant="body2" color="textSecondary" className={classes.drawerFooter}>
+                Versão {appVersion}
+            </Typography>
         </SwipeableDrawer>
     );
 };
