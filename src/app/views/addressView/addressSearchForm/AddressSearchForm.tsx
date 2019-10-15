@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         dialogPaper: {
             [theme.breakpoints.down('xs')]: {
+                maxHeight: '100%',
                 margin: 0,
                 borderRadius: 0,
             },
