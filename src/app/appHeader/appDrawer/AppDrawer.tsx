@@ -114,7 +114,7 @@ const AppDrawer: React.FC<IAppDrawerProps> = props => {
                     icon={HomeIcon}
                     text="Visitar o website oficial"
                     component="a"
-                    href="https://fabiopichler.net/"
+                    href="https://fabiopichler.net/omicron-cep"
                     target="_blank"
                 />
 
