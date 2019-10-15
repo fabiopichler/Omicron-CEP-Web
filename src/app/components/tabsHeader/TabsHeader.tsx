@@ -3,6 +3,7 @@ import SwipeableViews from 'react-swipeable-views';
 
 import { makeStyles, createStyles } from "@material-ui/styles";
 import { Theme, Container, Tabs, Tab } from '@material-ui/core';
+import { teal } from '@material-ui/core/colors';
 
 import { ITabsHeaderProps } from './ITabsHeaderProps';
 
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
             zIndex: 2,
         },
         tabsContainer: {
-            background: 'rgba(255,255,255,.13)',
+            background: teal[500],
             borderBottom: '1px solid rgba(255, 255, 255, .7)',
         },
         tabs: {

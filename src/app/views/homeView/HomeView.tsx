@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import { Theme, Button, Typography } from '@material-ui/core';
+import { teal } from '@material-ui/core/colors';
 
 import { setPageTitle } from '../../../helpers/system';
 import { Config } from '../../../config';
-import { teal } from '@material-ui/core/colors';
 
 const baseUrl = Config.baseUrl;
 
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: 240,
             height: 60,
             margin: `${theme.spacing(1.2)}px 0`,
-            background: 'rgba(255,255,255,.13)',
+            background: teal[500],
             color: 'rgba(255,255,255,.8)',
             boxShadow: `1px 1px 3px rgba(0,0,0,.2)`,
         },

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import SearchIcon from '@material-ui/icons/Search';
 
 import { makeStyles, createStyles } from '@material-ui/styles';
 import { Theme, Container, TextField, IconButton } from '@material-ui/core';
-
-import SearchIcon from '@material-ui/icons/Search';
+import { teal } from '@material-ui/core/colors';
 
 import { CepFormContainer } from './CepFormContainer';
 import { ICepFormProps } from './ICepFormProps';
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         input: {
             borderRadius: 0,
-            background: 'rgba(255,255,255,.13)',
+            background: teal[500],
             '&.MuiFilledInput-underline::before': {
                 borderBottom: '1px solid rgba(255, 255, 255, .7)',
             },
