@@ -8,10 +8,10 @@ O aplicativo é open source, totalmente gratuito e utiliza os serviços do webse
 
 ### Aplicativo Android
 
-Repositório do aplicativo Android: [github.com/fabiopichler/Omicron-CEP-Android](https://github.com/fabiopichler/Omicron-CEP-Android)
+Repositório do aplicativo Android: [https://github.com/fabiopichler/Omicron-CEP-Android](https://github.com/fabiopichler/Omicron-CEP-Android)
 
-Você pode baixar o APK para Android 5.0 ou superior: [Baixar OmicronCEP.apk](https://github.com/fabiopichler/Omicron-CEP-Android/releases/download/v1.0/OmicronCEP.apk)
+Você pode baixar o APK para Android 5.0 ou superior [a partir do site oficial](https://fabiopichler.net/omicron-cep) (em breve na Google Play Store)
 
 ### Aplicativo Web
 
-Ou acesse o aplicativo online, direto do navegador web: [projects.fabiopichler.net/omicron-cep](https://projects.fabiopichler.net/omicron-cep/)
+Ou acesse o aplicativo online, direto do navegador web: [https://projects.fabiopichler.net/omicron-cep/](https://projects.fabiopichler.net/omicron-cep/)
