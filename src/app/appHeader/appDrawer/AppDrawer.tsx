@@ -17,7 +17,7 @@ import LocationSearchingIcon from '@material-ui/icons/LocationSearching';
 import logo from '../../../assets/images/logo.svg';
 
 import ListItemDrawer from './listItemDrawer/ListItemDrawer';
-import TwitterIcon from '../../components/icons/twitterIcon/TwitterIcon';
+import TwitterIcon from '../../../components/icons/twitterIcon/TwitterIcon';
 
 import { IAppDrawerProps } from './IAppDrawerProps';
 import { Config } from '../../../config';

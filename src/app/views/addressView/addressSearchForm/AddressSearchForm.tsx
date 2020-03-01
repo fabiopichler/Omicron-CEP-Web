@@ -17,7 +17,7 @@ import {
 
 import SearchIcon from '@material-ui/icons/Search';
 
-import AddressSearchTransition from './addressSearchTransition/AddressSearchTransition';
+import AddressSearchTransition from '../../../../components/addressSearchTransition/AddressSearchTransition';
 
 import { IAddressSearchFormProps } from './IAddressSearchFormProps';
 import { UfList } from '../../../../data/UfList';
@@ -70,7 +70,7 @@ const AddressSearchForm: React.FC<IAddressSearchFormProps> = props => {
     const [logradouroError, setLogradouroError] = React.useState(false);
 
     const checkError = () => {
-        const errUf = uf.length != 2;
+        const errUf = uf.length !== 2;
         const errCidade = cidade.length < 3;
         const errLogradouro = logradouro.length < 3;
 
@@ -178,7 +178,7 @@ const AddressSearchForm: React.FC<IAddressSearchFormProps> = props => {
                             error={ufError}
                             onChange={handleChangeUf}
                             onFocus={() => setUfError(false)}
-                            onBlur={() => setUfError(uf.length != 2)}
+                            onBlur={() => setUfError(uf.length !== 2)}
                             SelectProps={{
                                 native: true,
                             }}

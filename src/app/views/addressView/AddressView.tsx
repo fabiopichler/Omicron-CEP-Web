@@ -3,7 +3,7 @@ import React from 'react';
 import AddressSearchPage from './addressSearchPage/AddressSearchPage';
 import AddressHistoryPage from './addressHistoryPage/AddressHistoryPage';
 import AddressSearchForm from './addressSearchForm/AddressSearchForm';
-import TabsHeader from '../../components/tabsHeader/TabsHeader';
+import TabsHeader from '../../../components/tabsHeader/TabsHeader';
 
 import { setPageTitle } from '../../../helpers/system';
 import { AddressViewContainer } from './AddressViewContainer';

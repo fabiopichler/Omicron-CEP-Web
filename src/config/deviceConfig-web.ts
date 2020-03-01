@@ -1,5 +1,6 @@
 import { IDeviceConfig } from "./config-interfaces";
 
+// eslint-disable-next-line
 export default <IDeviceConfig> {
     appName: 'Omicron CEP Web',
     appVersion: process.env.REACT_APP_VERSION,

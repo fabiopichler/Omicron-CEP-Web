@@ -4,11 +4,11 @@ import { makeStyles, createStyles } from '@material-ui/styles';
 import { Theme, Container, Toolbar } from '@material-ui/core';
 
 import CepForm from './cepForm/CepForm';
-import CepContent from '../../components/cepContent/CepContent';
-import Title from '../../components/title/Title';
-import Alert from '../../components/alert/Alert';
-import Loading from '../../components/loading/Loading';
-import Info from '../../components/info/Info';
+import CepContent from '../../../components/cepContent/CepContent';
+import Title from '../../../components/title/Title';
+import Alert from '../../../components/alert/Alert';
+import Loading from '../../../components/loading/Loading';
+import Info from '../../../components/info/Info';
 
 import { setPageTitle } from '../../../helpers/system';
 import { CepViewContainer } from './CepViewContainer';

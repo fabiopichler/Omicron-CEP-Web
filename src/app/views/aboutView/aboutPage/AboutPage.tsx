@@ -10,7 +10,7 @@ import {
     Typography
 } from '@material-ui/core';
 
-import Title from '../../../components/title/Title';
+import Title from '../../../../components/title/Title';
 
 import { Config } from '../../../../config';
 

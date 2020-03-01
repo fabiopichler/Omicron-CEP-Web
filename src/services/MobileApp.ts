@@ -1,5 +1,5 @@
 
-const mobileApp = (<any>window).Android_MobileApp;
+const mobileApp = (window as any).Android_MobileApp;
 const onMobile: boolean = !!mobileApp;
 
 export class MobileApp {

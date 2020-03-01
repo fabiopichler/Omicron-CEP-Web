@@ -70,7 +70,7 @@ export const AddressReducer = (state: IAddressState = initialState, actions: IAd
                         && value.uf === history.uf
                 ));
 
-                if (index == 0 && status == Status.Ok) {
+                if (index === 0 && status === Status.Ok) {
                     status = Status.Nothing;
                     searchResultList = [];
                 } else {

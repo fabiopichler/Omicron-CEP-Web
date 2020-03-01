@@ -17,7 +17,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../assets/images/logo.svg';
 
 import AppDrawer from './appDrawer/AppDrawer';
-import HideOnScroll from '../components/hideOnScroll/HideOnScroll';
+import HideOnScroll from '../../components/hideOnScroll/HideOnScroll';
 
 import { MobileApp } from '../../services/MobileApp';
 import { Config } from '../../config';

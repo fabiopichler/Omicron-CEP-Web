@@ -6,7 +6,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 
-import AddressSearchTransition from '../../views/addressView/addressSearchForm/addressSearchTransition/AddressSearchTransition';
+import AddressSearchTransition from '../addressSearchTransition/AddressSearchTransition';
 
 import { IQuestionDialogProps } from './IQuestionDialogProps';
 

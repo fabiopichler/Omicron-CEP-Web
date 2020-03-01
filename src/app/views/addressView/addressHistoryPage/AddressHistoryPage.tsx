@@ -6,9 +6,9 @@ import {
     createStyles,
 } from '@material-ui/core';
 
-import Title from '../../../components/title/Title';
-import AddressContent from '../../../components/addressContent/AddressContent';
-import Info from '../../../components/info/Info';
+import Title from '../../../../components/title/Title';
+import AddressContent from '../../../../components/addressContent/AddressContent';
+import Info from '../../../../components/info/Info';
 
 import { AddressHistoryPageContainer } from './AddressHistoryPageContainer';
 import { IAddressHistoryPageProps } from './IAddressHistoryPageProps';

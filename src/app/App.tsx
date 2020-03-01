@@ -45,6 +45,8 @@ const App: React.FC<IAppProps> = props => {
     React.useEffect(() => {
         cepInit();
         addressInitHistory();
+
+        // eslint-disable-next-line
     }, []);
 
     return (

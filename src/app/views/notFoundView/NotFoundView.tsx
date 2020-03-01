@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import { Theme, Container, Link, Typography } from '@material-ui/core';
 
-import Title from '../../components/title/Title';
+import Title from '../../../components/title/Title';
 
 import { setPageTitle } from '../../../helpers/system';
 import { Config } from '../../../config';

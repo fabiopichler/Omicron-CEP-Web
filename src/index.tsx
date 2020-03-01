@@ -17,7 +17,7 @@ import './assets/css/index.css';
 import { store } from './store/store';
 import { defaultTheme } from './themes/defaultTheme';
 
-import Router from './app/components/router/Router';
+import Router from './components/router/Router';
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { makeStyles, createStyles } from '@material-ui/styles';
 import { Theme, Icon } from '@material-ui/core';
 
-import twitter from '../../../../assets/images/twitter.svg';
+import twitter from '../../../assets/images/twitter.svg';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -24,6 +24,7 @@ const TwitterIcon: React.FC = props => {
             <img
                 className={classes.image}
                 src={twitter}
+                alt="Twitter"
             />
         </Icon>
     );

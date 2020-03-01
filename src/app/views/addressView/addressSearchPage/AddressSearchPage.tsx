@@ -6,12 +6,12 @@ import {
     createStyles,
 } from '@material-ui/core';
 
-import CepContent from '../../../components/cepContent/CepContent';
-import Title from '../../../components/title/Title';
-import Loading from '../../../components/loading/Loading';
-import Alert from '../../../components/alert/Alert';
-import AddressContent from '../../../components/addressContent/AddressContent';
-import Info from '../../../components/info/Info';
+import CepContent from '../../../../components/cepContent/CepContent';
+import Title from '../../../../components/title/Title';
+import Loading from '../../../../components/loading/Loading';
+import Alert from '../../../../components/alert/Alert';
+import AddressContent from '../../../../components/addressContent/AddressContent';
+import Info from '../../../../components/info/Info';
 
 import { AddressSearchPageContainer } from './AddressSearchPageContainer';
 import { IAddressSearchPageProps } from './IAddressSearchPageProps';
