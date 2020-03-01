@@ -14,7 +14,6 @@ import { setPageTitle } from '../../../helpers/system';
 import { CepViewContainer } from './CepViewContainer';
 import { ICepViewProps } from './ICepViewProps';
 import { Status } from '../../../models/Status';
-import { MobileApp } from '../../../services/MobileApp';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -78,9 +77,7 @@ const CepView: React.FC<ICepViewProps> = props => {
                             ) : null
                         ))}
 
-                        {!MobileApp.onMobile() ? (
-                            <Toolbar />
-                        ) : null}
+                        <Toolbar />
                     </>
                 ) : null}
             </Container>

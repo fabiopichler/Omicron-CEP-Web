@@ -19,7 +19,6 @@ import logo from '../../assets/images/logo.svg';
 import AppDrawer from './appDrawer/AppDrawer';
 import HideOnScroll from '../../components/hideOnScroll/HideOnScroll';
 
-import { MobileApp } from '../../services/MobileApp';
 import { Config } from '../../config';
 
 const baseUrl = Config.baseUrl;
@@ -73,17 +72,12 @@ const AppHeader: React.FC<RouterProps> = props => {
     }, [history.location]);
 
     const handleOpenDrawer = () => {
-        if (MobileApp.onMobile())
-            MobileApp.openDrawer();
-        else
-            openDrawer(true);
+        openDrawer(true);
     }
 
     return (
         <header className={classes.root}>
-            {!MobileApp.onMobile() ? (
-                <AppDrawer open={stateDrawer} onOpenDrawer={openDrawer} />
-            ) : null}
+            <AppDrawer open={stateDrawer} onOpenDrawer={openDrawer} />
 
             <HideOnScroll>
                 <AppBar component="div">

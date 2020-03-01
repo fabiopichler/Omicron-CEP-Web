@@ -11,7 +11,6 @@ import AppWebFooter from './appWebFooter/AppWebFooter';
 
 import { AppContainer } from './AppContainer';
 import { IAppProps } from './IAppProps';
-import { MobileApp } from '../services/MobileApp';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -65,9 +64,7 @@ const App: React.FC<IAppProps> = props => {
                 </CSSTransition>
             </TransitionGroup>
 
-            {!MobileApp.onMobile() ? (
-                <AppWebFooter />
-            ) : null}
+            <AppWebFooter />
         </div>
     );
 };

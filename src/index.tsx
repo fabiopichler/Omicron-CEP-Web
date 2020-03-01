@@ -6,6 +6,7 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import moment from 'moment';
 import Moment from 'react-moment';
 
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import 'moment-timezone';
@@ -17,7 +18,6 @@ import './assets/css/index.css';
 import { store } from './store/store';
 import { defaultTheme } from './themes/defaultTheme';
 
-import Router from './components/router/Router';
 import App from './app/App';
 import * as serviceWorker from './serviceWorker';
 
@@ -26,13 +26,13 @@ Moment.globalLocale = 'pt-br';
 Moment.globalLocal = true;
 
 ReactDOM.render(
-    <Router>
+    <BrowserRouter>
         <Provider store={store}>
             <ThemeProvider theme={defaultTheme}>
                 <App />
             </ThemeProvider>
         </Provider>
-    </Router>,
+    </BrowserRouter>,
     document.getElementById('root')
 );
 
